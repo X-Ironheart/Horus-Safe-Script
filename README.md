@@ -1,4 +1,3 @@
-Markdown
 <div align="center">
 
 # 𓂀 Horus-Safe-Script
