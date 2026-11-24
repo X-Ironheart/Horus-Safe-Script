@@ -1,0 +1,10 @@
+DrugName;TargetDisease;Contraindications;Price
+Panadol Extra;Headache;None;35.0
+Cataflam;Headache;Hypertension,Ulcer,Kidney;48.5
+Brufen;Headache;Ulcer,Asthma,Hypertension;40.0
+Congestal;Cold;Hypertension,Heart;32.0
+Panadol Cold & Flu;Cold;None;42.0
+Antinal;Stomachache;None;30.0
+Buscopan;Stomachache;Heart;38.5
+Claritine;Allergy;None;55.0
+Telfast;Allergy;None;65.0
