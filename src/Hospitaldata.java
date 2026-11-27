@@ -19,6 +19,8 @@ public static String [] tdisease = new String [MAX];
 public static String [] cont = new String [MAX];
 public static double [] drug_price = new double [MAX];
 public static String [] patientlogs = new String [MAX];
+public static String [] gender = new String [MAX];
+public static String [] PDisease = new String [MAX];
 
 
 public static void load_drugs_file() {
@@ -26,7 +28,7 @@ public static void load_drugs_file() {
     try (Scanner fileScanner = new Scanner(drugs_file)) {
         while (fileScanner.hasNextLine()&& drugs_count < MAX){
             String line = fileScanner.nextLine();
-            if (line == null || line.trim().isEmpty()|| line.startsWith("DrugName")) {continue;}
+            if (line == null || line.trim().isEmpty() || line.startsWith("DrugName")) {continue;}
             String [] drug_details = line.split(";"); // تقسيم ال csv نحول الدوا ل Array 
             if (drug_details.length == 4){
                 drug_name[drugs_count] = drug_details[0];
@@ -44,23 +46,18 @@ public static void load_drugs_file() {
 
 //ده هيبقا زي الميثود اللي فوق بس بكرا بقا ولا حاجه <<
 public static void load_patientlogs_file() {
-File patient_file = new File(PATIENTS_FILES);
+    File patient_file = new File(PATIENTS_FILES);
     try (Scanner fileScanner = new Scanner(patient_file)) {
         while (fileScanner.hasNextLine() && patients_count < MAX) { 
             String line = fileScanner.nextLine();
-            if (line == null || line.trim().isEmpty()){continue;}
-            String firstLine = fileScanner.nextLine();
-            if (!firstLine.startsWith("PatientName;")) {
-                patientlogs[patients_count] = firstLine;
+            if (line == null || line.trim().isEmpty() || line.startsWith("PatientName;")) {continue;}
+            String [] patient_details = line.split(";");
+            if ( (patient_details.length == 3)){ 
+                patientlogs[patients_count] = patient_details[0];
+                gender[patients_count] = patient_details[1];
+                PDisease[patients_count] = patient_details[2];
                 patients_count++;
             }
-            while (fileScanner.hasNextLine() && patients_count < MAX) {
-            // String line = fileScanner.nextLine();
-            if (!line.trim().isEmpty()) {
-                patientlogs[patients_count] = line.trim();
-            patients_count++;
-                }
-        }
         // read from fileScanner انا طلع عين امي علشان افهم في ايرور ليه ...-_-
     }
 } catch (FileNotFoundException e) {
