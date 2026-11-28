@@ -9,6 +9,10 @@ public class Main {
         System.out.println("==    loaded Drugs: " + Hospitaldata.drugs_count + "    ==    users: " + Hospitaldata.patients_count +"    ==");
         System.out.println("=============================================");
         System.out.println("nour's love you guys");
+
+        // while(true){
+        //     System.err.println("");
+        // }
     }
 }
 
