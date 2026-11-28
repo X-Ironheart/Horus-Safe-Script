@@ -29,7 +29,7 @@ public static void load_drugs_file() {
     try (Scanner fileScanner = new Scanner(drugs_file)) {
         while (fileScanner.hasNextLine()&& drugs_count < MAX){
             String line = fileScanner.nextLine();
-            if (line == null || line.trim().isEmpty() || line.startsWith("DrugName")) {continue;}
+            if (line == null || line.trim().isEmpty() || line.contains("DrugName")) {continue;}
             String [] drug_details = line.split(";"); // تقسيم ال csv نحول الدوا ل Array 
             if (drug_details.length == 4){
                 drug_name[drugs_count] = drug_details[0];
@@ -64,7 +64,7 @@ public static void load_patientlogs_file() {
     try (Scanner fileScanner = new Scanner(patient_file)) {
         while (fileScanner.hasNextLine() && patients_count < MAX) { 
             String line = fileScanner.nextLine();
-            if (line == null || line.trim().isEmpty() || line.startsWith("PatientName;")) {continue;}
+            if (line == null || line.trim().isEmpty() || line.contains("PatientName;")) {continue;}
                 patients_count++;
             // read from fileScanner انا طلع عين امي علشان افهم في ايرور ليه ...-_-
         }

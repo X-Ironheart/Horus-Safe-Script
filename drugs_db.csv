@@ -1,4 +1,4 @@
-﻿DrugName;TargetDisease;SideEffects;Price
+﻿DrugName;TargetDisease;Contraindications;Price
 Panadol 500 mg;Analgesic and antipyretic;Nausea, mild stomach upset, rare allergic skin rash.;21
 Tylenol 1000 mg;Analgesic and antipyretic;Nausea, mild stomach upset, liver strain in high doses.;61
 Febrectal 500 mg;Analgesic and antipyretic;Nausea, mild abdominal discomfort, rare skin rash.;82
